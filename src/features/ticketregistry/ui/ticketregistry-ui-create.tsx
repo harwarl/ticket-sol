@@ -1,12 +1,39 @@
 import { UiWalletAccount } from '@wallet-ui/react'
 import { Button } from '@/components/ui/button'
-// import { useGreetMutation } from '../data-access/use-greet-mutation'
+import { useCreateEventMutation } from '../data-access/use-create-event-mutation'
 
-export function TicketregistryUiCreate({ account }: { account: UiWalletAccount }) {
-  // const greetMutation = useGreetMutation({ account })
-  // return (
-  // <Button onClick={() => greetMutation.mutateAsync()} disabled={greetMutation.isPending}>
-  //   Run program{greetMutation.isPending && '...'}
-  // </Button>
-  // )
+export function TicketRegistryUiCreate({
+  account,
+  name,
+  description,
+  ticketPrice,
+  availableTicket,
+  startDate,
+}: {
+  account: UiWalletAccount
+  name: string
+  description: string
+  ticketPrice: number
+  availableTicket: number
+  startDate: number
+}) {
+  const createEventMutation = useCreateEventMutation({
+    account,
+    name,
+    description,
+    ticketPrice,
+    availableTicket,
+    startDate,
+  })
+
+  const handleSubmit = async () => {
+    // Validate the values and return toast
+    await createEventMutation.mutateAsync()
+  }
+
+  return (
+    <Button onClick={() => handleSubmit} disabled={createEventMutation.isPending}>
+      Create Event{createEventMutation.isPending && '...'}
+    </Button>
+  )
 }

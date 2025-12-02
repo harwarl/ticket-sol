@@ -8,11 +8,14 @@ skip-lint = false
 [programs.localnet]
 ticketregistry = "J2XaobyPdQGmGnw8JnbkiYfYGe8JLjT2zwFj1Ji2BXHm"
 
+[programs.devnet]
+ticketregistry = "J2XaobyPdQGmGnw8JnbkiYfYGe8JLjT2zwFj1Ji2BXHm"
+
 [registry]
 url = "https://api.apr.dev"
 
 [provider]
-cluster = "localnet"
+cluster = "devnet"
 wallet = "~/.config/solana/id.json"
 
 [scripts]

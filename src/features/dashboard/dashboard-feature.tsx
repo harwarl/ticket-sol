@@ -87,7 +87,13 @@ export default function DashboardFeature() {
               <p className="pt-2 md:py-6">
                 Whether you're organizing events or looking for tickets, we've got your covered
               </p>
-              <Button variant={'default'} size={'lg'}>
+              <Button
+                variant={'default'}
+                size={'lg'}
+                onClick={() => {
+                  router.push('/create')
+                }}
+              >
                 Start Creating Events
               </Button>
             </div>
