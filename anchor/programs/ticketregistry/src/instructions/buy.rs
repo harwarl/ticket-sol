@@ -55,12 +55,13 @@ pub struct Buy<'info> {
         init,
         payer = buyer,
         space = 8 + Ticket::INIT_SPACE,
-        seeds = [TICKET_SEED.as_bytes(), event.key().as_ref()],
+        seeds = [TICKET_SEED.as_bytes(), event.key().as_ref(), buyer.key().as_ref()],
         bump
     )]
     pub ticket: Account<'info, Ticket>,
+
     #[account(mut)]
     pub event: Account<'info, Event>,
-
+    
     pub system_program: Program<'info, System>,
 }

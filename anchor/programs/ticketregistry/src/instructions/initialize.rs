@@ -18,11 +18,11 @@ pub fn _initialize(
     let event = &mut ctx.accounts.event;
     let event_bump = ctx.bumps.event;
 
-    require!(name.len() > MAX_NAME_LEN, TicketRegistryError::NameTooLong);
+    require!(name.len() <= MAX_NAME_LEN, TicketRegistryError::NameTooLong);
     event.name = name;
 
     require!(
-        description.len() > MAX_DESCRIPTION_LEN,
+        description.len() <= MAX_DESCRIPTION_LEN,
         TicketRegistryError::DescriptionTooLong
     );
     event.description = description;
@@ -56,6 +56,7 @@ pub fn _initialize(
 pub struct Initialize<'info> {
     #[account(mut)]
     pub event_organizer: Signer<'info>,
+
     #[account(
         init,
         payer = event_organizer,
@@ -64,5 +65,6 @@ pub struct Initialize<'info> {
         bump
     )]
     pub event: Account<'info, Event>,
+    
     pub system_program: Program<'info, System>,
 }

@@ -4,7 +4,7 @@ import { useState } from 'react'
 import dynamic from 'next/dynamic'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
-import { Menu, X } from 'lucide-react'
+import { Menu, Ticket, X } from 'lucide-react'
 import { ThemeSelect } from '@/components/theme-select'
 import { WalletDropdown } from '@/components/wallet-dropdown'
 
@@ -24,10 +24,14 @@ export function AppHeader({ links = [] }: { links: { label: string; path: string
     <header className="relative z-50 px-4 py-2 bg-card/50">
       <div className="mx-auto flex justify-between items-center">
         <div className="flex items-baseline gap-4">
-          <Link className="text-xl hover:text-neutral-500 dark:hover:text-white" href="/">
-            <span>Ticketregistry</span>
+          <Link
+            className="text-xl hover:text-neutral-500 dark:hover:text-white flex items-center justify-center gap-1"
+            href="/"
+          >
+            <Ticket className="h-6 w-6" />
+            <span>DinaRegistry</span>
           </Link>
-          <div className="hidden md:flex items-center">
+          {/* <div className="hidden md:flex items-center">
             <ul className="flex gap-4 flex-nowrap items-center">
               {links.map(({ label, path }) => (
                 <li key={path}>
@@ -40,7 +44,7 @@ export function AppHeader({ links = [] }: { links: { label: string; path: string
                 </li>
               ))}
             </ul>
-          </div>
+          </div> */}
         </div>
 
         <Button variant="ghost" size="icon" className="md:hidden" onClick={() => setShowMenu(!showMenu)}>
@@ -48,9 +52,9 @@ export function AppHeader({ links = [] }: { links: { label: string; path: string
         </Button>
 
         <div className="hidden md:flex items-center gap-4">
-          <WalletDropdown />
-          <ClusterDropdown />
           <ThemeSelect />
+          <ClusterDropdown />
+          <WalletDropdown />
         </div>
 
         {showMenu && (

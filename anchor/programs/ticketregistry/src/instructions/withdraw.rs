@@ -6,8 +6,8 @@ pub fn _withdraw(ctx: Context<Withdraw>, amount: u64) -> Result<()> {
     let event_organizer = &mut ctx.accounts.event_organizer;
     let event = &mut ctx.accounts.event;
 
-    event.sub_lamports(amount);
-    event_organizer.add_lamports(amount);
+    event.sub_lamports(amount)?;
+    event_organizer.add_lamports(amount)?;
 
     Ok(())
 }
@@ -19,4 +19,5 @@ pub struct Withdraw<'info> {
 
     #[account(mut)]
     pub event: Account<'info, Event>,
+    system_program: Program<'info, System>
 }

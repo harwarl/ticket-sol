@@ -6,7 +6,7 @@ use anchor_lang::prelude::*;
 
 use instructions::*;
 
-declare_id!("JAVuBXeBZqXNtS73azhBDAoYaaAFfo4gWXoZe2e7Jf8H");
+declare_id!("J2XaobyPdQGmGnw8JnbkiYfYGe8JLjT2zwFj1Ji2BXHm");
 
 #[program]
 pub mod ticketregistry {
@@ -20,6 +20,8 @@ pub mod ticketregistry {
         available_ticket: u64,
         start_date: i64,
     ) -> Result<()> {
+
+    
         _initialize(
             ctx,
             name,
