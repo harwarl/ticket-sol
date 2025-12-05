@@ -12,8 +12,8 @@ export default function TicketRegistryLoadEvents() {
   }
 
   return (
-    <>
+    <div>
       <TicketRegistryUiEvents />
-    </>
+    </div>
   )
 }

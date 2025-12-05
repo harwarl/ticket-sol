@@ -21,7 +21,7 @@ export function TicketregistryUiProgram() {
   })
 
   return (
-    <div className="max-w-3xl sm:mt-4 mx-auto">
+    <div className="max-w-2xl sm:mt-4 mx-auto">
       <Card>
         <CardHeader>
           <CardTitle>Create Event Title</CardTitle>
@@ -31,7 +31,7 @@ export function TicketregistryUiProgram() {
         </CardHeader>
         <CardContent>
           <form className="space-y-6">
-            <div className="space-y-2">
+            <div className="space-y-3">
               <Label htmlFor="name">Event Name</Label>
               <Input
                 id="name"
@@ -44,7 +44,7 @@ export function TicketregistryUiProgram() {
               />
             </div>
 
-            <div className="space-y-2">
+            <div className="space-y-3">
               <Label htmlFor="description">Description</Label>
               <Textarea
                 id="description"
@@ -58,7 +58,7 @@ export function TicketregistryUiProgram() {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="space-y-2">
+              <div className="space-y-3">
                 <Label htmlFor="ticketPrice">Ticket Price</Label>
                 <Input
                   id="ticketPrice"
@@ -74,7 +74,7 @@ export function TicketregistryUiProgram() {
                 />
               </div>
 
-              <div className="space-y-2">
+              <div className="space-y-3">
                 <Label htmlFor="availableTickets">Available Tickets</Label>
                 <Input
                   id="availableTickets"
@@ -90,7 +90,7 @@ export function TicketregistryUiProgram() {
                 />
               </div>
             </div>
-            <div className="space-y-2">
+            <div className="space-y-3">
               <Label htmlFor="startDate">Start Date</Label>
               <Input
                 id="startDate"

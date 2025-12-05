@@ -16,12 +16,7 @@ export const metadata: Metadata = {
   description: 'Manage your event tickets with ease',
 }
 
-const links: { label: string; path: string }[] = [
-  // More links...
-  { label: 'Home', path: '/' },
-  // { label: 'Account', path: '/account' },
-  { label: 'Create Ticket', path: '/create' },
-]
+const links: { label: string; path: string }[] = [{ label: 'My Events', path: '/events/dashboard' }]
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (

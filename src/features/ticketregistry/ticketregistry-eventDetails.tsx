@@ -11,12 +11,12 @@ export default function TicketRegistryEventDetails() {
   const { account } = useSolana()
   const params = useParams()
   const eventPda = useMemo(() => {
-    if (!params.address || typeof params.address !== 'string') {
+    if (!params.eventpda || typeof params.eventpda !== 'string') {
       return
     }
 
-    assertIsAddress(params.address)
-    return params.address
+    assertIsAddress(params.eventpda)
+    return params.eventpda
   }, [params])
 
   if (!account) {

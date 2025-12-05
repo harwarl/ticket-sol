@@ -1,7 +1,5 @@
 import TicketRegistryLoadEvents from '@/features/ticketregistry/ticketregistry-loadEvents'
 
-const Event = () => {
+export default function Event() {
   return <TicketRegistryLoadEvents />
 }
-
-export default Event

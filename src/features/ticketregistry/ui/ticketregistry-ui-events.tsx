@@ -6,6 +6,7 @@ import { Badge } from '@/components/ui/badge'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
+import { AppPageHeader } from '@/components/app-page-header'
 
 export interface EventData {
   eventPda: string
@@ -19,16 +20,18 @@ export interface EventData {
 export const mockEvents: EventData[] = [
   {
     eventPda: '8h1fAn67wKhmatHS52HQBeYhM5JHEJap43U6YC4AT95x',
-    eventName: 'mockEvent',
-    description: 'mockdescription',
+    eventName: 'Ayele Show',
+    description:
+      'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium veritatis modi cumque labore, accusamus soluta ad veniam iusto architecto perspiciatis eligendi dolor, quae fuga similique. Facere reiciendis quos possimus quaerat. Perferendis, maiores odio necessitatibus laborum saepe ratione quos nisi, eos rerum labore error aliquid. Vitae cumque, quas aspernatur dolore voluptatem, odio accusamus reprehenderit officia excepturi expedita sapiente eveniet sed porro, quam eos? Totam eaque commodi, illo sint quia fuga distinctio molestias rem rerum. Saepe, ut at. Dolor iure aliquid aspernatur aut nihil distinctio nisi suscipit! Soluta ipsa quo incidunt libero laborum labore tenetur, tempora ducimus nemo dolorum voluptas laudantium nulla.',
     ticketPrice: 0.4,
     availableTicket: 100,
     startDate: Date.now(),
   },
   {
     eventPda: '8h1fAn67wKhmatHS52HQBeYhM5JHEJap43U6YC4AT95y',
-    eventName: 'mockEvent',
-    description: 'mockdescription',
+    eventName: 'Ayefele Show',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis ex est quis tempore ipsam accusantium cum quasi? Officiis consequuntur esse laudantium blanditiis cum quisquam optio autem possimus, aut dolore nam deserunt sunt voluptate incidunt commodi deleniti itaque illum recusandae iure aperiam explicabo provident distinctio. Maiores praesentium suscipit provident fuga temporibus.',
     ticketPrice: 0.4,
     availableTicket: 100,
     startDate: Date.now(),
@@ -43,8 +46,9 @@ export const mockEvents: EventData[] = [
   },
   {
     eventPda: '8h1fAn67wKhmatHS52HQBeYhM5JHEJap43U6YC4AT95s',
-    eventName: 'mockEvent',
-    description: 'mockdescription',
+    eventName: 'Ayele Oh Ibosi Oh',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat pariatur architecto accusantium ullam rem! Qui fugit natus voluptatem placeat explicabo quisquam excepturi ea saepe, magni quod aut nemo deserunt eius est omnis beatae dolores repudiandae ratione aperiam facere. Rerum error perferendis inventore beatae dicta qui optio amet quis? Error, voluptatum!',
     ticketPrice: 0.4,
     availableTicket: 100,
     startDate: Date.now(),
@@ -60,7 +64,7 @@ export default function TicketRegistryUiEvents() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <AppHero title={'Browse Events'} subtitle={'Find and purchase tickets for upcoming events'} />
+      <AppPageHeader title={'Browse Events'} subtitle={'Find and purchase tickets for upcoming events'} />
 
       {availableEvents.length === 0 ? (
         <Card>
